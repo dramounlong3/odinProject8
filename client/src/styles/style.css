@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.card-container {
+  min-width: 90px;
+  min-height: 98px;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  /*設定立體透視度讓翻轉的過程看起來更立體*/
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.cover,
+.back {
+  width: 100%;
+  height: 100%;
+  /*absolute會向外找relative來定位，如果都沒找到就是以body來定位*/
+  position: absolute;
+  /*將目前back -180度的背面隱藏*/
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*根據root font-size 放大兩倍 所以為46px，預設是32px*/
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  /*為div加陰影*/
+  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.9);
+  /*為文字加陰影*/
+  text-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.cover {
+  background-image: linear-gradient(65.5deg, #17cdcd -15.1%, #17195f 71.5%);
+  color: white;
+  cursor: pointer;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.cover-flip {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.back {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #80f8ae 0%, #dff494 90%);
+  /*-180表示back一開始就是背面*/
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.back-flip {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+body {
+  background-image: radial-gradient(circle farthest-corner at 1.3% 2.8%, #eff9f9 0%, #b6c7e2 100.2%);
+}
+
+.text-shadow-black {
+  text-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.9);
+}
+
+.text-shadow-yellow {
+  text-shadow: 0 0.3rem 0.5rem rgba(128, 128, 128, 0.8);
+}
+/*# sourceMappingURL=style.css.map */
