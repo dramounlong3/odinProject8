@@ -1,9 +1,3 @@
-// import Pokedex from "pokeapi-js-wrapper";
-// const P = new Pokedex.Pokedex();
-
-// const idUrl = "https://pokeapi.co/api/v2/pokemon/";
-// const limitUrl = "https://pokeapi.co/api/v2/pokemon?limit=";
-
 //此demo測試如何先同時fetch發送request取得寶可夢資訊，但等全部資料都回傳後才執行後續的程式碼
 //如果不先同時發送fetch, 每次發送都要等到接到資訊才繼續下一次的request, 會非常久
 //解法參考此篇文章, https://nicolakacha.coderbridge.io/2020/09/11/sync-async/   段落: ReadableStream
@@ -76,14 +70,7 @@ const getPokemon = async (limit, offset) => {
       console.log(error);
     });
 
-  //console.log(pokemonInfo);
   return pokemonInfo;
 };
-
-//因為必須包在async內才能使用await
-// (async () => {
-//   let pokemon = await handlePokemon();
-//   console.log(pokemon);
-// })();
 
 export { getPokemon };

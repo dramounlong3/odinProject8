@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+
+.pokedexContainer {
+  //box-sizing: border-box;
+  background: #efefbb;
+  background: linear-gradient(to right, #d4d3dd, #efefbb);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato";
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: 3px;
+}
+
+.poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  //max-width: 1200px;
+}
+
+.pokemon {
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 160px;
+  position: relative;
+
+  /*拉簾效果*/
+  overflow: hidden;
+}
+
+.img-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pokedexImg {
+  margin-top: 10px;
+  max-width: 90%;
+}
+
+.info {
+  margin-top: 20px;
+  h3 {
+    max-width: 100%;
+  }
+}
+
+.number {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 1; /*只有position設定static之外的屬性才能讓z-index有效果，但fixed, absolute, 在此圖示中會讓number跑版, 故選擇relative or sticky*/
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+.name {
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}
+
+/*for stats*/
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  color: black;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(101%);
+  transition: 0.3s ease-in;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.stats > h2 {
+  margin-bottom: 10px;
+}
+
+.stats-box {
+  display: flex;
+}
+
+.stats-box > ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-box > ul > li {
+  padding: 0;
+  font-style: italic;
+  text-align: start;
+}
+
+.pokemon:hover > .stats {
+  top: 0;
+  bottom: unset;
+  display: flex;
+  transform: translateY(0%);
+}
+
+.backToTop {
+  cursor: pointer;
+}

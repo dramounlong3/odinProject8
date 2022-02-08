@@ -1,0 +1,19 @@
+.login-body {
+  height: 100vh;
+}
+
+.bg-skyblue {
+  background-color: rgb(234, 242, 255);
+}
+
+.google-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .login-container {
+    border: 1px solid rgba(gray, 0.2);
+  }
+}
